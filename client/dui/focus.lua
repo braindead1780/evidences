@@ -2,6 +2,7 @@ local config <const> = require "config"
 local eventHandler <const> = require "common.events.handler"
 local framework <const> = require "common.frameworks.framework"
 local dui <const> = require "client.dui.dui"
+local texture <const> = require "client.dui.laptops.texture.texture"
 
 local started = false
 local lastX, lastY = 0, 0
@@ -55,6 +56,9 @@ end)
 function focus.start(laptop)
     if not started then
         started = true
+        -- render the dui on the laptop's screen again just in case it didn't work on startup ("black screen bug")
+        texture.replace("script_rt_tvscreen", dui.dictName, dui.txtName)
+
         DisplayRadar(false)
         SetNuiFocus(true, false)
     

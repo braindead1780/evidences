@@ -3,6 +3,11 @@ math.randomseed(os.time()) -- Seed the PRNG
 lib.locale()
 lib.versionCheck("noobsystems/evidences")
 
+if not LoadResourceFile(cache.resource, "html/dui/laptop/dist/index.html") then
+    lib.print.error("Setup step missing: Download the script from the releases section (https://github.com/noobsystems/evidences/releases/latest) or build the laptop dui")
+    return
+end
+
 if require "server.items" then
     local biometricData <const> = require "server.evidences.biometric_data"
     exports("getFingerprint", biometricData.getFingerprint)
