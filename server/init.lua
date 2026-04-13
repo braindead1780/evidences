@@ -29,4 +29,6 @@ if require "server.items" then
     require "server.biometrics.biometrics_taking"
 
     require "server.scanner.scanner"
+
+    require "server.integrations.ps_mdt"
 end

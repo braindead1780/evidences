@@ -51,7 +51,7 @@ function framework.getCitizens(searchText, limit, offset)
 end
 
 function framework.getCitizen(identifier)
-    return databa.selectFirstRow(
+    return database.selectFirstRow(
         [[
             SELECT
                 citizenid AS identifier,
